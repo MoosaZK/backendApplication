@@ -38,7 +38,6 @@ jobs:
       - name: Restart PM2 process
         run: |
           ssh ubuntu@44.218.204.229 << 'EOF'
-            cd /var/www/my-app/
             pm2 kill
             pm2 start /var/www/my-app/app.js --name "my-app" --watch
           EOF

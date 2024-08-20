@@ -23,7 +23,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: npm install
-      - run: npm run start
 
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.1
@@ -34,3 +33,5 @@ jobs:
           remote_host: 44.218.204.229.compute.amazonaws.com
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - run: npm run start

@@ -38,6 +38,7 @@ jobs:
       - name: Restart PM2 process
         run: |
           ssh -t ubuntu@44.218.204.229 << 'EOF'
-            cd /var/www/my-app/
-            pm2 restart all
+          cd /var/www/my-app/
+          /home/ubuntu/.nvm/versions/node/v22.6.0/bin/pm2 restart all
           EOF
+

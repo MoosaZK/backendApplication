@@ -31,14 +31,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 44.218.204.229 >> ~/.ssh/known_hosts
 
-      - name: Rsync deployments
+      - name: rsync deployments
         run: |
-          rsync -avzr --delete --exclude=".git" ./* ubuntu@44.218.204.229:/var/www/my-app/
+          rsync -avzr --delete ./* ubuntu@44.218.204.229:/var/www/my-app/
 
-      - name: Restart PM2 process
-        run: |
-          ssh ubuntu@44.218.204.229 << 'EOF'
-            cd /var/www/my-app/
-            /usr/local/bin/pm2 start app.js --name "my-app" --watch || /usr/local/bin/pm2 restart "my-app"
-          EOF
-
+      - run: npm run start &

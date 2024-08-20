@@ -5,7 +5,7 @@ const port = 3000; // You can choose any port you like
 
 // Define a route for the API
 app.get('/', (req, res) => {
-  res.send('Hello, welcome to my API!');
+  res.send('Hello, my name is Moosa!');
 });
 
 // Start the server

@@ -5,7 +5,7 @@ const port = 3000; // You can choose any port you like
 
 // Define a route for the API
 app.get('/', (req, res) => {
-  res.send('Hello, my name is Moosa. This is my first CI/CD over AWS!');
+  res.send('Hello, my name is Moosa. This is my first CI/CD over AWS. Used github actions!');
 });
 
 // Start the server
